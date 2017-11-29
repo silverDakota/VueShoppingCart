@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+   <header>
+      <title>VueShoppingCart</title>
+	  <!--
+			VueShoppingCart / Lake Bottom Stone
+			Filename: 	rocks.html
+			Author: 	Dakota Young
+			Date:		11/29/17
+		-->
+		<meta charset= "utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">	
+
+    <script src="https://unpkg.com/vue"></script>
+
+   </header>
+   <body>
+			<div id="app">
+			<nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+						<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						</div>
+						<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">Home</a></li>
+							<li><a class="active" href="rocks.html">Rocks</a></li>
+							<li><a href="#">Sand</a></li>
+							<li><a href="#">Gravel</a></li>
+							<li><a href="#">Minerals</a></li>
+							<li><a href="#">Bulk</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="cart.html">Cart</a></li>
+							<li id="cartItems" v-if="cartitem > 0"> {{ cartitem }}</li>
+						</ul>
+						</div>
+					</div>
+					</nav>
+	
+			<div class="container">
+					<div class="page-header">
+						<a href="index.html"><img class ="banner" src="img/banner.png" alt="banner"></a>
+					</div>
+				<div class="row">
+				<div v-for="item in items" v-if="item.ordered >=0">
+				<div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="card" style="width: 20rem;">
+					<img class="card-img-top imgthumbnail" v-bind:src = "item.imgsrc" alt="Card image cap">
+						<div class="card-block">
+							<h4 class="card-title">{{item.name}}__ {{item.price}} $$</h4>
+							<h5>Stock__{{item.inventory}}</h5>
+							<p>{{item.Desc}}</p>
+						<div v-if="item.inventory > 0">
+							<button v-on:click = "orderthis(item), increment">Add To Cart {{item.name}}</button>
+						</div>
+					</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+		</div>
+
+		<br>
+
+		<div class="container">
+		<div class="row">
+				<div v-for="item in items" v-if="item.ordered > 0">
+				<div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="card" style="width: 20rem;">
+						<img class="card-img-top imgthumbnail" v-bind:src = "item.imgsrc" alt="Card image cap">
+							<div class="card-block">
+								<h4 class="card-title">{{item.name}}__ {{item.price}} $$</h4>
+								<h5>Ordered__{{item.ordered}}</h5>
+								<div v-if="item.inventory > 0">
+								<button v-on:click = "orderthis(item)">Add One</button>
+								</div>
+								<button v-on:click = "removeonethis(item)">Remove One</button>
+								<button v-on:click = "removeallthis(item)">Remove All</button>
+								</div>
+							</div>
+						</div>	
+					</div>
+					<br>
+					<div v-if="cartitem > 0"></div>
+					<h2>Total Item__ {{ cartitem }}</h2>
+					<h2>Subtotal__ {{ subtotal }}</h2>
+				</div>
+				</div>
+			</div>
+
+	</div>
+	<footer>Dakota Young VueShoppingCart</footer>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="index.js"></script>
+   </body>
+</html>

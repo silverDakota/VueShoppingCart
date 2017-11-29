@@ -1,0 +1,55 @@
+body {
+  /*css for full size background image*/
+    background: url("../img/bgLand.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    background-color: #000;
+    color: #f2f2f2;
+    text-shadow: 1px 1px #cccccc;
+  }
+  blockquote{
+    background-color:rgb(165, 135, 81);
+  }
+  footer{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  button, input, select, textarea{
+    color: black;
+  }
+  .banner{
+    max-width: 100%;
+    width: 80%;
+    height: auto;
+    margin-top: -60px;
+    border-radius: 5px 20px 10px 50px;
+  }
+.container{
+  background-color: #5a4122;
+
+}
+.storeimg{
+  width: 100%;
+  height: auto;
+}
+.navbar{
+background-color: black;
+}
+.nav>li>a{
+ color: gray;
+}
+.center{
+  margin: auto;
+  width: 60%;
+  border: 5px solid rgb(0, 0, 0);
+  padding: 10px;
+}
+.imgthumbnail{
+  width: 200px;
+  height: 200px;
+}

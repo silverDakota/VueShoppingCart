@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+   <header>
+      <title>VueShoppingCart</title>
+	  <!--
+			VueShoppingCart / Lake Bottom Stone
+			Filename: 	index.html
+			Author: 	Dakota Young
+			Date:		11/29/17
+			
+		-->
+		<meta charset= "utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">	
+		<script src="https://unpkg.com/vue"></script>
+   </header>
+   <body>
+
+		<div id="app">
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a class="active" href="rocks.html">Rocks</a></li>
+                        <li><a href="#">Sand</a></li>
+                        <li><a href="#">Gravel</a></li>
+                        <li><a href="#">Minerals</a></li>
+                        <li><a href="#">Bulk</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="cart.html">Cart</a></li>
+                        <li id="cartItems" v-if="cartitem > 0"> {{ cartitem }}</li>
+                    </ul>
+                    </div>
+                </div>
+                </nav>
+
+		<div class="container">
+				<div class="page-header">
+					<a href="index.html"><img class ="banner" src="img/banner.png" alt="banner"></a>
+				</div>
+				<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<div class="center">
+					<img class="storeimg" src="img/Storefront.jpg" alt="store">
+				</div>
+					<blockquote>We carry a variety of stone and gravel for retaining walls, patios, walkways, steps, and garden beds or driveways.
+						Here are a few of our products below.  If you don't see what you are looking for, call us or come in and we can show you a 
+						full catalog of materials to choose from.
+						We can also give experienced advice on the material and even draw up your dream landscape and install it for you if you wish.
+						Call us today us or come in to ask about delivery and installation, and knowledgeable advice about placement and care. 
+					<blockquote>
+					  <p>Call us at 999-555-7575</p>
+					  <p>Or visit our store if you are near at 3017 West PineWood, Marshfield Mo across from the duck pond</p>
+				</div>
+			</div>
+		</div>
+	</div>
+			<footer>Dakota Young VueShoppingCart</footer>
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="index.js"></script>
+   </body>
+</html>
